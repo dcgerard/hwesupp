@@ -1,0 +1,46 @@
+---
+output: github_document
+bibliography: geno_bib.bib
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Supplementary Material for @gerard2022comment
+
+[![NSF-2132247](https://img.shields.io/badge/NSF-2132247-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2132247)
+
+The File "hwesupp.Rmd" is an R Markdown file that contains
+Appendices S1--S5, and is sufficient to reproduce all of the results
+of @gerard2022comment. It has been knitted into "hwesupp.pdf"
+
+The file "sims.csv" contains the simulation output from
+Appendix S5 of "hwesupp.Rmd".
+
+The file "table2_power.Rmd" contains one iteration of
+"table2_power.R" from @wang2021tracing, annotated to
+demonstrate the mistakes here. It has been knitted into
+"table2_power.pdf".
+
+Much of the code from @wang2021tracing and
+@wang2022asymptotic were packaged by us in the `{hexocto}`
+package on GitHub <https://github.com/dcgerard/hexocto>.
+
+A fork of the original code from @wang2021tracing and
+@wang2022asymptotic may be found at at
+<https://github.com/dcgerard/hexaploid> and
+<https://github.com/dcgerard/OctoploidDeer>.
+
+## Acknowledgments
+
+This material is based upon work supported by the National Science Foundation under Grant No. [2132247](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2132247). The opinions, findings, and conclusions or recommendations expressed are those of the author and do not necessarily reflect the views of the National Science Foundation.
+
+# References
