@@ -1,5 +1,5 @@
 ---
-title: 'Supplement to: Comment on Two Papers about Hardy-Weinberg Equilibrium Tests in Autopolyploids'
+title: 'Supplement to: Comment on Three Papers about Hardy-Weinberg Equilibrium Tests in Autopolyploids'
 author: |
   | David Gerard
   | \small Department of Mathematics and Statistics, American University, Washington, DC, 20016, USA
@@ -22,7 +22,7 @@ options(digits = 3)
 ```
 
 \begin{abstract}
-This supplementary document contains additional simulations, coding examples, and other supporting material for ``Comment on Two Papers about Hardy-Weinberg Equilibrium Tests in Autopolyploids''.
+This supplementary document contains additional simulations, coding examples, and other supporting material for ``Comment on Three Papers about Hardy-Weinberg Equilibrium Tests in Autopolyploids''.
 \end{abstract}
 
 \appendix

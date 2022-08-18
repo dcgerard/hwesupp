@@ -39,7 +39,7 @@ National Science Foundation.
 
 <div id="ref-gerard2022comment" class="csl-entry">
 
-Gerard, David. 2022. “[Comment on Two Papers about Hardy-Weinberg
+Gerard, David. 2022. “[Comment on Three Papers about Hardy-Weinberg
 Equilibrium Tests in Autopolyploids]().” *Unpublished Manuscript*.
 
 </div>
