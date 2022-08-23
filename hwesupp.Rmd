@@ -354,6 +354,55 @@ write.csv(x = paramdf, file = "./sims.csv", row.names = FALSE)
 
 The estimates of $\alpha$ are very biased (Figure \@ref(fig:alpha-box)), and the estimates of $\bs{p}$ are somewhat biased (Figure \@ref(fig:p-box)). 
 
+# Degrees of Freedom Calculations
+
+Here, we list out the five instances of incorrect degrees of freedom calculations from @sun2021recursive, @wang2022asymptotic, and @wang2021tracing.
+
+The degrees of freedom for the both the equilibrium and random mating
+tests are incorrect in @sun2021recursive. They list the degrees
+of freedom to be four in both tests. But there are already four free
+parameters under the alternative (since
+$q_0 + q_1 + q_2 + q_3 + q_4 = 1$). Since @sun2021recursive
+assume the double reduction rate is known, under the null of
+equilibrium there is one free parameter (the allele frequency), and so
+the degrees of freedom for the test for equilibrium is $4-1=3$, not
+4. Under the null of random mating, there are 2 free parameters (since
+$p_0 + p_1 + p_2 = 1$), and so the degrees of freedom for the test of
+random mating is $4 - 2 = 2$, not 4.
+
+The degrees of freedom for the random mating test is incorrect in
+@wang2022asymptotic. On page 4 of @wang2022asymptotic,
+the authors say about their test for random mating that ``this test
+statistic follows the chi-square distribution with an unknown degree
+of freedom. However, we can empirically determine it as a value
+between 7 - 1 - 1 = 5 to 7 - 1 = 6.'' We can theoretically determine
+the degrees of freedom here. There are 6 free parameters under the
+alternative (since $q_0 + q_1 + q_2 + q_3 + q_4 + q_5 + q_6 = 1$), and
+there are 3 free parameters under the null (since
+$p_0 + p_1 + p_2 + p_3 = 1$), and so the degrees of freedom is 6 - 3 =
+3, which is neither 5 nor 6. 
+
+The degrees of freedom for the recursive test is incorrect in
+@wang2022asymptotic. They say, right after their equation (1)
+that the degrees of freedom is 6. But there are already 6 free
+parameters under the alternative. Because @wang2022asymptotic
+assume the double reduction rate is known, there is only 1 free
+parameter under the null, the allele frequency. Thus, the true degrees
+of freedom is 6 - 1 = 5, not 6. See Appendix S4 for an empirical
+demonstration.
+
+The degrees of freedom for the recursive test is incorrect in
+@wang2021tracing. Right after their equation (3), they state
+that their $\chi^2$ statistic ``is thought to follow a chi-square
+distribution with eight degrees of freedom.'' But there are already 8
+parameters under the alternative (since $\sum_{k=0}^8q_k = 1$). The
+number of parameters under the null is unclear since they are using a
+different (incorrect) model for meiosis than we have studied for
+octoploids, but it likely at least 1 (for the allele
+frequency). Empirically, it seems the degrees of freedom is 7, not 8
+(Appendix S4).
+
+
 \clearpage
 
 # Supplementary Figures
