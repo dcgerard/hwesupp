@@ -372,10 +372,10 @@ random mating is $4 - 2 = 2$, not 4.
 
 The degrees of freedom for the random mating test is incorrect in
 @wang2022asymptotic. On page 4 of @wang2022asymptotic,
-the authors say about their test for random mating that ``this test
+the authors say about their test for random mating that "this test
 statistic follows the chi-square distribution with an unknown degree
 of freedom. However, we can empirically determine it as a value
-between 7 - 1 - 1 = 5 to 7 - 1 = 6.'' We can theoretically determine
+between 7 - 1 - 1 = 5 to 7 - 1 = 6." We can theoretically determine
 the degrees of freedom here. There are 6 free parameters under the
 alternative (since $q_0 + q_1 + q_2 + q_3 + q_4 + q_5 + q_6 = 1$), and
 there are 3 free parameters under the null (since
@@ -393,8 +393,8 @@ demonstration.
 
 The degrees of freedom for the recursive test is incorrect in
 @wang2021tracing. Right after their equation (3), they state
-that their $\chi^2$ statistic ``is thought to follow a chi-square
-distribution with eight degrees of freedom.'' But there are already 8
+that their $\chi^2$ statistic "is thought to follow a chi-square
+distribution with eight degrees of freedom." But there are already 8
 parameters under the alternative (since $\sum_{k=0}^8q_k = 1$). The
 number of parameters under the null is unclear since they are using a
 different (incorrect) model for meiosis than we have studied for
