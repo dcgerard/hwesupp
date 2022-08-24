@@ -4,6 +4,7 @@
 # Supplementary Material for Gerard (2022)
 
 [![NSF-2132247](https://img.shields.io/badge/NSF-2132247-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2132247)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7019205.svg)](https://doi.org/10.5281/zenodo.7019205)
 
 The File “hwesupp.Rmd” is an R Markdown file that contains Appendices
 S1–S5, and is sufficient to reproduce all of the results of Gerard
