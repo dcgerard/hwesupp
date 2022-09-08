@@ -7,7 +7,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7019205.svg)](https://doi.org/10.5281/zenodo.7019205)
 
 The File “hwesupp.Rmd” is an R Markdown file that contains Appendices
-S1–S5, and is sufficient to reproduce all of the results of Gerard
+S1–S6, and is sufficient to reproduce all of the results of Gerard
 (2022). It has been knitted into “hwesupp.pdf”
 
 The file “sims.csv” contains the simulation output from Appendix S5 of
