@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff = 60), tidy = T
 
 # Summary
 
-Below is one iteration of the code from "table2_power.R" from @wang2021tracing. We show that they use a perturbation of the *true* genotype frequencies when constructing their test statistic. Since the true genotype frequencies are never known in reality, this test statistic could never be constructed in reality.
+Below is one iteration of the code from "table2_power.R" from @wang2021tracing. I show that they use a perturbation of the *true* genotype frequencies when constructing their test statistic. Since the true genotype frequencies are never known in reality, this test statistic could never be constructed in reality.
 
 # Code
 
@@ -614,7 +614,7 @@ KF <- ((prob1[1]-exp[1])^2/exp[1]+(prob1[2]-exp[2])^2/exp[2]+(prob1[3]-exp[3])^2
 kff <- c(kff,KF)
 ```
 
-We can verify that `prob1` is the same as above
+I can verify that `prob1` is the same as above
 ```{r}
 prob1
 ```

@@ -38,23 +38,23 @@ This supplementary document contains additional simulations, coding examples, an
 \renewcommand{\thesection}{S\arabic{section}}
 
 
-This document was written in R Markdown and may be explored interactively. All code chunks are executable in the order given.
+This document was written in R Markdown and may be explored interactively. All code chunks are executable in the order given. You can access the R Markdown file at <https://doi.org/10.5281/zenodo.7019205>.
 
-The package `{hexocto}` contains the code from @wang2021tracing and @wang2022asymptotic, formatted in package form by us so that it is easier to compare. The original repos with the original code are <https://github.com/CCBBeijing/hexaploid> and <https://github.com/CCBBeijing/OctoploidDeer>. You can install this package using `{devtools}`:
+The package `{hexocto}` contains the code from @wang2021tracing and @wang2022asymptotic, formatted in package form by me so that it is easier to compare. The original repos with the original code are <https://github.com/CCBBeijing/hexaploid> and <https://github.com/CCBBeijing/OctoploidDeer>. You can install this package using `{devtools}`:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("dcgerard/hexocto")
 ```
 
-The package `{hwep}` contains the code from @gerard2022double. We use it for comparison purposes at times. You can install the development version via:
+The package `{hwep}` contains the code from @gerard2022double. I use it for comparison purposes at times. You can install the development version via:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("dcgerard/hwep")
 ```
 
-We will load these packages into R now:
+I will load these packages into R now:
 
 ```{r, message=FALSE}
 library(hexocto)
@@ -64,7 +64,7 @@ library(hwep)
 # Difference between random mating and equilibrium
 \label{sec:diff}
 
-Here, we numerically demonstrate the difference between random mating and equilibrium in autohexaploids.
+Here, I numerically demonstrate the difference between random mating and equilibrium in autohexaploids.
 
 For illustration, let's make an extreme example. Suppose the gamete frequencies for a hexaploid are
 ```{r}
@@ -90,7 +90,7 @@ This results in equilibrium frequencies of the following when $\alpha = 0$, the 
 hwep::hwefreq(r = r, alpha = 0, ploidy = 6, niter = Inf)
 ```
 
-We can verify this by iterating the recursive scheme from @wang2022asymptotic.
+I can verify this by iterating the recursive scheme from @wang2022asymptotic.
 ```{r}
 qw <- q
 for (i in 1:20) {
@@ -104,7 +104,7 @@ Equilibrium frequencies when $\alpha = 0.3$, the upper bound [@huang2019genotypi
 hwep::hwefreq(r = r, alpha = 0.3, ploidy = 6, niter = Inf)
 ```
 
-We can also verify this by iterating the recursive scheme from @wang2022asymptotic.
+I can also verify this by iterating the recursive scheme from @wang2022asymptotic.
 ```{r}
 qw <- q
 for (i in 1:20) {
@@ -116,11 +116,11 @@ qw
 # Incorrect equilibrium genotype frequencies from @wang2021tracing
 \label{sec:wrong.equi}
 
-We will begin at the same example genotype frequencies as @wang2021tracing.
+I will begin at the same example genotype frequencies as @wang2021tracing.
 ```{r}
 yww <- c(0.1, 0.1, 0.15, 0.1, 0.2, 0.1, 0.05, 0.1, 0.1)
 ```
-Then we apply their recursive approach to obtain their equilibrium genotype frequencies
+Then I apply their recursive approach to obtain their equilibrium genotype frequencies
 ```{r}
 hexocto::octo_recursive(yww = yww, niter = 20, alpha = 0)
 ```
@@ -129,7 +129,7 @@ These are different from the theoretical binomial proportions @haldane1930theore
 r <- sum(0:8 * yww) / 8
 dbinom(x = 0:8, size = 8, prob = r)
 ```
-Our `{hwep}` package, on the other hand, correctly calculates these using our recursive formula
+My `{hwep}` package, on the other hand, correctly calculates these using my recursive formula
 ```{r}
 qcurrent <- yww
 for (i in seq_len(20)) {
@@ -156,7 +156,7 @@ nind <- sum(nvec)
 
 Here, I will reproduce those tests, and demonstrate that they implemented their $\chi^2$ test statistics incorrectly.
 
-Their recursive test gets a chi-squared value of 6.602, which we can get here.
+Their recursive test gets a chi-squared value of 6.602, which I can get here.
 ```{r}
 hex_chisq(yww = nvec / nind, 
           nind = nind,
@@ -224,11 +224,11 @@ sum((nvec/nind - qhat)^2 / qhat)
 options(digits = 3)
 ```
 
-Here, we show that the method @wang2022asymptotic does not produce uniform $p$-values under the null of equilibrium. We also show that our correct version, including the correct degrees of freedom of 5, not 6, does produce uniform $p$-values under the null of equilibrium. We also find the correct degrees of freedom for the recursive test in @wang2021tracing to be 7, not 8.
+Here, I show that the method @wang2022asymptotic does not produce uniform $p$-values under the null of equilibrium. I also show that my correct version, including the correct degrees of freedom of 5, not 6, does produce uniform $p$-values under the null of equilibrium. I also find the correct degrees of freedom for the recursive test in @wang2021tracing to be 7, not 8.
 
 ## Hexaploids
 
-We generate data under the null of equilibrium. We then fit the incorrect method @wang2022asymptotic, our corrected version, and the likelihood ratio test from @gerard2022double.
+I generate data under the null of equilibrium. I then fit the incorrect method @wang2022asymptotic, my corrected version, and the likelihood ratio test from @gerard2022double.
 ```{r}
 qvec <- hwep::hwefreq(r = 0.5, alpha = 0.1, ploidy = 6)
 nrep <- 1000
@@ -270,7 +270,7 @@ qplot(sample = pout_hwep, geom = "qq", distribution = qunif) +
 
 ## Octoploids
 
-We generate data under the incorrect model of @wang2021tracing, calculating the $\chi^2$ statistic each iteration.
+I generate data under the incorrect model of @wang2021tracing, calculating the $\chi^2$ statistic each iteration.
 ```{r}
 yww1 <- c(0, 0, 0, 0, 1, 0, 0, 0, 0)
 qvec <- octo_recursive(yww = yww1)
@@ -304,9 +304,9 @@ qplot(sample = pocto, geom = "qq", distribution = qunif) +
 
 The model @wang2022asymptotic used to create an estimator for $\alpha$ is actually different from (1) and (2). Their model to estimate double reduction says that (i) parent genotypes frequencies satisfy $\tilde{\bs{q}} = \bs{p}*\bs{p}$ for some $\bs{p}$, and (ii) the current genotype frequencies are $\bs{q} = f(\tilde{\bs{q}}, \alpha)$. So this indicates random mating for parents, and one update of random mating for children given the double reduction rate.
 
-We ran simulations with $\bs{p} = (1, 1, 1, 1)/4$ or $\bs{p} = (0.1, 0.2, 0.3, 0.4)$, $n \in \{100, 200, 400\}$, and $\alpha \in \{0, 1/7, 1/5, 3/11\}$. This mimics the simulation settings from @wang2022asymptotic. We ran each unique combination of parameter settings for 100 replications. Each replication, we generated data according to the assumed model from @wang2022asymptotic, then used their code to obtain estimates of $\bs{p}$ and $\alpha$. We always initialized the algorithm at $\alpha = 0$ and $\bs{p} = (1, 1, 1, 1) / 4$.
+I ran simulations with $\bs{p} = (1, 1, 1, 1)/4$ or $\bs{p} = (0.1, 0.2, 0.3, 0.4)$, $n \in \{100, 200, 400\}$, and $\alpha \in \{0, 1/7, 1/5, 3/11\}$. This mimics the simulation settings from @wang2022asymptotic. I ran each unique combination of parameter settings for 100 replications. Each replication, I generated data according to the assumed model from @wang2022asymptotic, then used their code to obtain estimates of $\bs{p}$ and $\alpha$. I always initialized the algorithm at $\alpha = 0$ and $\bs{p} = (1, 1, 1, 1) / 4$.
 
-Below is our simulation code.
+Below is my simulation code.
 
 ```{r, eval = FALSE}
 ## Parameter settings ----
@@ -356,7 +356,7 @@ The estimates of $\alpha$ are very biased (Figure \@ref(fig:alpha-box)), and the
 
 # Degrees of Freedom Calculations
 
-Here, we list out the five instances of incorrect degrees of freedom calculations from @sun2021recursive, @wang2022asymptotic, and @wang2021tracing.
+Here, I list out the five instances of incorrect degrees of freedom calculations from @sun2021recursive, @wang2022asymptotic, and @wang2021tracing.
 
 The degrees of freedom for the both the equilibrium and random mating
 tests are incorrect in @sun2021recursive. They list the degrees
@@ -375,7 +375,7 @@ The degrees of freedom for the random mating test is incorrect in
 the authors say about their test for random mating that "this test
 statistic follows the chi-square distribution with an unknown degree
 of freedom. However, we can empirically determine it as a value
-between 7 - 1 - 1 = 5 to 7 - 1 = 6." We can theoretically determine
+between 7 - 1 - 1 = 5 to 7 - 1 = 6." I can theoretically determine
 the degrees of freedom here. There are 6 free parameters under the
 alternative (since $q_0 + q_1 + q_2 + q_3 + q_4 + q_5 + q_6 = 1$), and
 there are 3 free parameters under the null (since
@@ -397,7 +397,7 @@ that their $\chi^2$ statistic "is thought to follow a chi-square
 distribution with eight degrees of freedom." But there are already 8
 parameters under the alternative (since $\sum_{k=0}^8q_k = 1$). The
 number of parameters under the null is unclear since they are using a
-different (incorrect) model for meiosis than we have studied for
+different (incorrect) model for meiosis than I have studied for
 octoploids, but it likely at least 1 (for the allele
 frequency). Empirically, it seems the degrees of freedom is 7, not 8
 (Appendix S4).
