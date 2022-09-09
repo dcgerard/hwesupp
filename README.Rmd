@@ -32,7 +32,7 @@ demonstrate the mistakes here. It has been knitted into
 "table2_power.pdf".
 
 Much of the code from @wang2021tracing and
-@wang2022asymptotic were packaged by us in the `{hexocto}`
+@wang2022asymptotic were packaged by me in the `{hexocto}`
 package on GitHub <https://github.com/dcgerard/hexocto>.
 
 A fork of the original code from @wang2021tracing and

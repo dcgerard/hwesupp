@@ -18,7 +18,7 @@ from Wang et al. (2021), annotated to demonstrate the mistakes here. It
 has been knitted into “table2_power.pdf”.
 
 Much of the code from Wang et al. (2021) and Wang et al. (2022) were
-packaged by us in the `{hexocto}` package on GitHub
+packaged by me in the `{hexocto}` package on GitHub
 <https://github.com/dcgerard/hexocto>.
 
 A fork of the original code from Wang et al. (2021) and Wang et al.
